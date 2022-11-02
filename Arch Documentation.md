@@ -169,17 +169,17 @@ root@archiso ~ # nano /mnt/etc/Locale.gen
 
 #### ***5. Generate locals (chroot again)***
 ```shell
-[root@archiso /] locale-gen
+[root@archiso /]# locale-gen
 ```
 #### ***6. Create locale.conf & set LANG variable to "en_US.UTF-8"***
 ```shell
-[root@archiso /] touch /etc/locale.conf
+[root@archiso /]# touch /etc/locale.conf
 
 root@archiso ~ # nano /mnt/etc/locale.conf
 ```
 #### ***7. Create hostname file***
 ```shell
-[root@archiso /] touch /etc/hostname
+[root@archiso /]# touch /etc/hostname
 
 root@archiso ~ # nano /mnt/etc/hostname
 ```
