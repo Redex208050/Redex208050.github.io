@@ -1,4 +1,3 @@
-Ctrl+K V to view display
 # **Installation Documentation**
 
 ## **Setup for Installation**
@@ -133,5 +132,55 @@ root@archiso ~ # mkfs.fat -F 32 /dev/sda1
 ```shell
 root@archiso ~ # mount /dev/sda2 /mnt
 
-root@archiso ~ # mount --mkdir /dev/efi_system_partition /mnt/boot
+root@archiso ~ # mount --mkdir /dev/sda1 /mnt/boot
 ```
+
+#### ***11. Install base package, Linux kernel, and firmware***
+```shell
+root@archiso ~ # pacstrap -K /mnt base linux linux-firmware
+```
+
+## **Configuration**
+
+#### ***1. Create fstab file***
+```shell
+root@archiso ~ # genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+#### ***2. Change root into the new system***
+```shell
+root@archiso ~ # arch-chroot /mnt
+```
+
+#### ***3. Change time zone***
+```shell
+[root@archiso /]# ln -sf /usr/share/zoneinfo/America/Chicago /etc/localtime
+
+[root@archiso /]# hwclock --systohc
+```
+(Second command generates /etc/adjtime)
+
+#### ***4. Uncomment the following in /etc/locale.gen (Tip: Must use exit before using nano)***
+```shell
+root@archiso ~ # nano /mnt/etc/Locale.gen
+```
+- en_US.UTF-8 UTF-8
+- Any other locales needed (None)
+
+#### ***5. Generate locals (chroot again)***
+```shell
+[root@archiso /] locale-gen
+```
+#### ***6. Create locale.conf & set LANG variable to "en_US.UTF-8"***
+```shell
+[root@archiso /] touch /etc/locale.conf
+
+root@archiso ~ # nano /mnt/etc/locale.conf
+```
+#### ***7. Create hostname file***
+```shell
+[root@archiso /] touch /etc/hostname
+
+root@archiso ~ # nano /mnt/etc/hostname
+```
+
