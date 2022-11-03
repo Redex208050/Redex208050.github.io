@@ -180,8 +180,46 @@ root@archiso ~ # arch-chroot /mnt
 ```shell
 [root@archiso /]# nano /etc/locale.conf
 ```
-#### ***8. Create hostname file***
+#### ***8. Create hostname file & add preferred name (used: brayden)***
 ```shell
 [root@archiso /]# nano /etc/hostname
 ```
 
+#### ***9. Add the following to static table lookup for hostnames***
+```shell
+[root@archiso /]# nano /etc/hosts
+```
+- 127.0.0.1     localhost
+- ::1           localhost
+- 127.0.1.1     [name from hostname].localdomain    [name from hostname]
+
+#### ***10. Update root password***
+```shell
+[root@archiso /]# passwd
+```
+
+#### ***11. Create user and user directory***
+```shell
+[root@archiso /]# useradd -G wheel,audio,video -m [name from hostname]
+```
+
+#### ***12. Create password for new user***
+```shell
+[root@archiso /]# passwd [name from hostname]
+```
+
+#### ***13. Install netctl and dependencies (use default when prompted)***
+```shell
+[root@archiso /]# pacman -Syu netctl
+
+[root@archiso /]# pacman -Syu dhcpcd
+```
+
+#### ***14. Install Sudo package and uncomment to allow wheel group to execute any command***
+```shell
+[root@archiso /]# pacman -Syu sudo
+
+[root@archiso /]# EDITOR=nano visudo
+```
+
+#### ***15. ***
