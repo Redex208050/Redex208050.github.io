@@ -99,6 +99,7 @@ First sector (2048-31457279, default 2048): 2048
 
 Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-31457279, default 31457279): +500M
 ```
+
 2. sda2
 ```shell
 Command (m for help): n
