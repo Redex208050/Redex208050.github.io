@@ -87,7 +87,7 @@ root@archiso ~ # fdisk /dev/sda
 
 #### ***8. Create two new partitions***
 1. sda1
-```
+```shell
 Command (m for help): n
 ...
 
