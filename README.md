@@ -125,7 +125,7 @@ Command (m for help): w
 ```shell
 root@archiso ~ # mkfs.ext4 /dev/sda2
 
-root@archiso ~ # mkfs.fat -F 32 /dev/sda1
+root@archiso ~ # mkfs.fat -F32 /dev/sda1
 ```
 
 #### ***10. Mount the root & EFI system partitions***
@@ -160,27 +160,28 @@ root@archiso ~ # arch-chroot /mnt
 ```
 (Second command generates /etc/adjtime)
 
-#### ***4. Uncomment the following in /etc/locale.gen (Tip: Must use exit before using nano)***
+#### ***4. Add nano***
 ```shell
-root@archiso ~ # nano /mnt/etc/Locale.gen
+[root@archiso /]# pacman -Syu nano
+```
+
+#### ***5. Uncomment the following in /etc/locale.gen***
+```shell
+[root@archiso /]# nano /etc/locale.gen
 ```
 - en_US.UTF-8 UTF-8
 - Any other locales needed (None)
 
-#### ***5. Generate locals (chroot again)***
+#### ***6. Generate locals***
 ```shell
 [root@archiso /]# locale-gen
 ```
-#### ***6. Create locale.conf & set LANG variable to "en_US.UTF-8"***
+#### ***7. Create locale.conf & set LANG variable to "en_US.UTF-8"***
 ```shell
-[root@archiso /]# touch /etc/locale.conf
-
-root@archiso ~ # nano /mnt/etc/locale.conf
+[root@archiso /]# nano /etc/locale.conf
 ```
-#### ***7. Create hostname file***
+#### ***8. Create hostname file***
 ```shell
-[root@archiso /]# touch /etc/hostname
-
-root@archiso ~ # nano /mnt/etc/hostname
+[root@archiso /]# nano /etc/hostname
 ```
 
