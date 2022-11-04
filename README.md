@@ -203,7 +203,7 @@ root@archiso ~ # arch-chroot /mnt
 [root@archiso /]# passwd
 ```
 
-#### ***12. Create user and user directory***
+#### ***12. Create user and user directory [maximum confusion time. Youre welcome :p]***
 ```shell
 [root@archiso /]# useradd -G wheel,audio,video -m [name from hostname]
 ```
@@ -239,12 +239,12 @@ root@archiso ~ # arch-chroot /mnt
 
 #### ***2. Install grub pt. 1***
 ```shell
-[root@archiso /]# grub-install --target=x86_64-efi --efi-directory=/efi/ --bootloader-id=Arch
+[root@archiso /]# grub-install --target=x86_64-efi --efi-directory=/efi/ --bootloader-id=GRUB
 ```
 
 #### ***3. Create grub config***
 ```shell
-ERROR   [root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
+[root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ## **-Finish Network Configuration-**
@@ -264,7 +264,7 @@ ERROR   [root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
 ```shell
 [root@archiso /]# systemctl enable dhcpcd
 
-ERROR   [root@archiso /]# systemctl start dhcpcd
+[root@archiso /]# systemctl start dhcpcd
 ```
 
 ## **-Unmount-**
@@ -281,4 +281,84 @@ ERROR   [root@archiso /]# systemctl start dhcpcd
 
 #### ***2. Select "Arch" for boot***
 
+## **Congrats you've installed Arch linux!**
+
 # **Post Installation**
+
+## ***-Create an account for codi, change the password, set password to be reset on login-***
+
+#### ***1. Create account for codi***
+```shell
+[brayden@brayden ~]$ sudo useradd -G wheel,audio,video -m codi
+```
+
+#### ***2. Change codi's password***
+```shell
+[brayden@brayden ~]$ sudo passwd codi
+```
+
+#### ***3. Set codi's account to reset password on login***
+```shell
+[brayden@brayden ~]$ sudo passwd -e codi
+```
+
+## **-Install LXDE and set to boot into the GUI desktop environment-**
+
+#### ***1. Download the lxde & lxdm packages***
+```shell
+[brayden@brayden ~]$ sudo pacman -Syu lxde lxdm
+```
+
+#### ***2. Enable manager***
+```shell
+[brayden@brayden ~]$ systemctl enable lxdm
+...
+Choose identity to authenticate as (1-2): [number of your account]
+```
+
+#### ***3. Create the file .xinitrc, then add “exec startlxde" to it***
+```shell
+[brayden@brayden ~]$ nano .xinitrc
+```
+
+## **-Optional: Install firefox-**
+```shell
+[brayden@brayden ~]$ sudo pacman -Syu firefox
+```
+
+## **-Change the color of terminal-**
+
+#### ***Export style made from BashrcGenerator, or whatever method prefered into .bashrc*** 
+
+- [BashrcGenerator](www.bashrcgenerator.com)
+
+```shell
+[brayden@brayden ~]$ nano ~/.bashrc
+```
+**I used** (PS1='\[\e[01;37m\][\[\e[0m\]\[\e[01;32m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[01;34m\]\h\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;37m\]\t\[\e[0m\]\[\e[01;37m\] \W]\\$ \[\e[0m\]')
+
+## **-Add some aliases-**
+```shell
+[brayden@brayden ~]$ alias [name]='[command]'
+
+[brayden@brayden ~]$ nano ~/.bashrc
+```
+#### ***I added***
+- alias la='ls -a'
+- alias ..='cd ..'
+- alias cl='clear'
+
+## **-Install fish-**
+
+#### ***Download fish and switch into it***
+```shell
+[brayden@brayden ~]$ sudo pacman -Syu fish
+
+[brayden@brayden ~]$ fish
+```
+
+## **-SSH into class VM-**
+```shell
+[brayden@brayden ~]$ ssh sysadmin@10.10.1.123
+```
+# **THANK GOD IM DONE! This was very difficult, and would have been huge/impossible if i documented all my issues**
