@@ -1,6 +1,6 @@
 # **Installation Documentation**
 
-## **Setup for Installation**
+## **-Setup for Installation-**
 
 #### ***1. Locate and select any mirror under United States from the link below***
 - [ArchDownloads](https://archlinux.org/download/)
@@ -8,7 +8,7 @@
 #### ***2. Download the ISO file***
 - archlinux-2022.10.01-x86_64.iso
 
-## **Installation**
+## **-Installation-**
 
 #### ***1. Select "Create a New Virtual Machine in VMware Workstation 16 Pro"***
 
@@ -135,12 +135,12 @@ root@archiso ~ # mount /dev/sda2 /mnt
 root@archiso ~ # mount --mkdir /dev/sda1 /mnt/boot
 ```
 
-#### ***11. Install base package, Linux kernel, and firmware***
+#### ***11. Download base package, Linux kernel, and firmware***
 ```shell
 root@archiso ~ # pacstrap -K /mnt base linux linux-firmware
 ```
 
-## **Configuration**
+## **-Configuration-**
 
 #### ***1. Create fstab file***
 ```shell
@@ -208,18 +208,74 @@ root@archiso ~ # arch-chroot /mnt
 [root@archiso /]# passwd [name from hostname]
 ```
 
-#### ***13. Install netctl and dependencies (use default when prompted)***
+#### ***13. Download netctl and dependencies (use default when prompted)***
 ```shell
 [root@archiso /]# pacman -Syu netctl
 
-[root@archiso /]# pacman -Syu dhcpcd
+[root@archiso /]# pacman -Syu dhcpcd dhcp
 ```
 
-#### ***14. Install Sudo package and uncomment to allow wheel group to execute any command***
+#### ***14. Download Sudo package and uncomment to allow wheel group to execute any command***
 ```shell
 [root@archiso /]# pacman -Syu sudo
 
 [root@archiso /]# EDITOR=nano visudo
 ```
 
-#### ***15. ***
+#### ***15. Download openssh***
+```shell
+[root@archiso /]# pacman -Syu openssh
+```
+
+## **-Boot Loader-**
+
+#### ***1. Download grub and  efibootmanager***
+```shell
+[root@archiso /]# pacman -Syu grub efibootmgr
+```
+
+#### ***2. Install grub pt. 1***
+```shell
+[root@archiso /]# grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=Arch
+```
+
+#### ***3. Create grub config***
+```shell
+ERROR   [root@archiso /]# grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+## **-Finish Network Configuration-**
+#### ***1. Find network adaptor's name (found ens33)***
+```shell
+[root@archiso /]# ip link
+```
+
+#### ***2. Generate a network card profile & change the inteferface line to "Interface=[network adaptor's name here]" in it***
+```shell
+[root@archiso /]# cp /etc/netctl/examples/ethernet-static /etc/netctl/ens33
+
+[root@archiso /]# nano /etc/netctl/ens33
+```
+
+#### ***3. Enable network card***
+```shell
+[root@archiso /]# systemctl enable dhcpcd
+
+ERROR   [root@archiso /]# systemctl start dhcpcd
+```
+
+## **-Unmount-**
+```shell
+[root@archiso /]# umount -R /mnt
+```
+
+## **-Boot Time!-**
+
+#### ***1. Reboot VM***
+```shell
+[root@archiso /]# reboot
+```
+
+#### ***2. Select "Arch" for boot***
+
+# **Post Installation**
