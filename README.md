@@ -104,7 +104,9 @@ Last sector, +/-sectors or +/-size{K,M,G,T,P} (1026048-31457279, default 3145727
 ```
 
 2. sda2
+
 ```shell
+
 Command (m for help): n
 ...
 
@@ -115,7 +117,9 @@ Partition number (2-4, default 1): 2
 First sector (1026048-31457279, default 1026048): 1026048
 
 Last sector, +/-sectors or +/-size{K,M,G,T,P} (1026048-31457279, default 31457279): 31457279
+
 ```
+
 Check partitions
 ```shell
 Command (m for help): p
