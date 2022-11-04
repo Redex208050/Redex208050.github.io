@@ -361,4 +361,6 @@ Choose identity to authenticate as (1-2): [number of your account]
 ```shell
 [brayden@brayden ~]$ ssh sysadmin@10.10.1.123
 ```
+![SSH pic](/Screenshot (16).png)
+
 # **THANK GOD IM DONE! This was very difficult, and would have been huge/impossible if i documented all my issues**
