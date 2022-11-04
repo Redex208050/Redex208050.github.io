@@ -87,18 +87,19 @@ root@archiso ~ # fdisk /dev/sda
 
 #### ***8. Create two new partitions***
 1. sda1
+
 ```shell
 Command (m for help): n
 ...
-
-Select (default p): p
-
-Partition number (1-4, default 1): 1
-
-First sector (2048-31457279, default 2048): 2048
-
-Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-31457279, default 31457279): +500M
 ```
+    Select (default p): p
+
+    Partition number (1-4, default 1): 1
+
+    First sector (2048-31457279, default 2048): 2048
+
+    Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-31457279, default 31457279): +500M
+
 2. sda2
 ```shell
 Command (m for help): n
