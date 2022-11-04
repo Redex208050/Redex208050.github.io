@@ -132,7 +132,7 @@ root@archiso ~ # mkfs.fat -F32 /dev/sda1
 ```shell
 root@archiso ~ # mount /dev/sda2 /mnt
 
-root@archiso ~ # mount --mkdir /dev/sda1 /mnt/boot
+root@archiso ~ # mount --mkdir /dev/sda1 /mnt/efi
 ```
 
 #### ***11. Download base package, Linux kernel, and firmware***
@@ -176,7 +176,7 @@ root@archiso ~ # arch-chroot /mnt
 ```shell
 [root@archiso /]# locale-gen
 ```
-#### ***7. Create locale.conf & set LANG variable to "en_US.UTF-8"***
+#### ***7. Set LANG variable to "en_US.UTF-8" in locale.conf***
 ```shell
 [root@archiso /]# nano /etc/locale.conf
 ```
@@ -191,38 +191,41 @@ root@archiso ~ # arch-chroot /mnt
 ```
 - 127.0.0.1     localhost
 - ::1           localhost
-- 127.0.1.1     [name from hostname].localdomain    [name from hostname]
+- 127.0.1.1     [name from hostname]
 
-#### ***10. Update root password***
+#### ***10. Generate ramdisk***
+```shell
+[root@archiso /]# mkinitcpio -P
+```
+
+#### ***11. Update root password***
 ```shell
 [root@archiso /]# passwd
 ```
 
-#### ***11. Create user and user directory***
+#### ***12. Create user and user directory***
 ```shell
 [root@archiso /]# useradd -G wheel,audio,video -m [name from hostname]
 ```
 
-#### ***12. Create password for new user***
+#### ***13. Create password for new user***
 ```shell
 [root@archiso /]# passwd [name from hostname]
 ```
 
-#### ***13. Download netctl and dependencies (use default when prompted)***
+#### ***14. Download netctl and dependencies (use default when prompted)***
 ```shell
-[root@archiso /]# pacman -Syu netctl
-
-[root@archiso /]# pacman -Syu dhcpcd dhcp
+[root@archiso /]# pacman -Syu netctl dhcpcd dhcp
 ```
 
-#### ***14. Download Sudo package and uncomment to allow wheel group to execute any command***
+#### ***15. Download Sudo package and uncomment to allow wheel group to execute any command***
 ```shell
 [root@archiso /]# pacman -Syu sudo
 
 [root@archiso /]# EDITOR=nano visudo
 ```
 
-#### ***15. Download openssh***
+#### ***16. Download openssh***
 ```shell
 [root@archiso /]# pacman -Syu openssh
 ```
@@ -236,7 +239,7 @@ root@archiso ~ # arch-chroot /mnt
 
 #### ***2. Install grub pt. 1***
 ```shell
-[root@archiso /]# grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=Arch
+[root@archiso /]# grub-install --target=x86_64-efi --efi-directory=/efi/ --bootloader-id=Arch
 ```
 
 #### ***3. Create grub config***
