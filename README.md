@@ -95,7 +95,7 @@ Command (m for help): n
 
 Select (default p): p
 
-Partition number (2-4, default 1): 1
+Partition number (1-4, default 1): 1
 
 First sector (1026048-31457279, default 1026048): 2048
 
