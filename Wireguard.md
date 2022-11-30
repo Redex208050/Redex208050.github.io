@@ -62,11 +62,11 @@
 # mkdir -p wireguard/config/
 ```
 2. **Create .yml file for docker compose and add the following content**
-- *Command*
+- ***Command***
 ```sh
 # nano wireguard/docker-compose.yml
 ```
-- *Content (IMPORTANT! Edit TZ to your timezone, SERVEURL to your Droplet server IP. Note that the spacing below is slightly incorrect, as "source:" & "target:" should be aligned with "type:" above them.))*
+- ***Content (IMPORTANT! Edit TZ to your timezone and SERVEURL to your Droplet server IP. Note that the spacing below is slightly incorrect, as "source:" & "target:" should be aligned with "type:" above them.)***
 
     version: '3.8'\
     services:\
