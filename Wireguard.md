@@ -1,6 +1,6 @@
 # ***How To Set Up Wireguard Using Docker***
 
-## ****Create a Droplet****
+## ***Create a Droplet***
 
 1. **Create a DigitalOcean account or login with an existing account**
 
@@ -99,7 +99,7 @@
     &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- net.ipv4.conf.all.src_valid_mark=1
 
 
-1. **Enter the Wireguard directory and start Wireguard**
+3. **Enter the Wireguard directory and start Wireguard**
 
 ```sh
 # cd wireguard
@@ -109,4 +109,15 @@
 
 # ***Connect Devices To Wireguard***
 
-1. **Connect phone to Wireguard**
+1. **Run command to get QR code**
+```sh
+# docker-compose logs -f wireguard
+```
+
+2. **Download WireGuard on your IOS device**
+
+3. **Select "Add a Tunnel" then "Create from QR code"**
+
+4. **Scan QR code, name the tunnel, and turn the tunnel on**
+
+# **CONGRATULATIONS! You've completed this guide.**
