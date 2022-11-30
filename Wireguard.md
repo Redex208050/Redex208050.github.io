@@ -68,7 +68,7 @@
 ```
 - *Content (Edit TZ to your timezone, SERVEURL to your Droplet server IP)*
 ```
-version: '3.8'
+"version: '3.8'
 services:
   wireguard:
     container_name: wireguard
@@ -96,7 +96,7 @@ services:
       - NET_ADMIN
       - SYS_MODULE
     sysctls:
-      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv4.conf.all.src_valid_mark=1"
 ```
 
 1. **test**
