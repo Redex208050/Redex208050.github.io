@@ -121,3 +121,9 @@
 4. **Scan the "PEER phone1 QR code:" QR code, name the tunnel, and turn the tunnel on**
 
 # **CONGRATULATIONS! You've completed this guide.**
+
+1. **Original IP**
+
+2. **IP Using WireGuard**
+
+3. **Photo Evidence That The Tunnel Is Active**
