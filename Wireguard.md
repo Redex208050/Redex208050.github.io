@@ -66,7 +66,7 @@
 ```sh
 # nano wireguard/docker-compose.yml
 ```
-- *Content (Edit TZ to your timezone, SERVEURL to your Droplet server IP)*
+- *Content (IMPORTANT! Edit TZ to your timezone, SERVEURL to your Droplet server IP. Note that the spacing below is slightly incorrect, as "source:" & "target:" should be aligned with "type:" above them.))*
 
     version: '3.8'\
     services:\
