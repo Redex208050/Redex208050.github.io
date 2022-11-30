@@ -66,37 +66,37 @@
 ```sh
 # nano wireguard/docker-compose.yml
 ```
-- *Content*
+- *Content (Edit TZ to your timezone, SERVEURL to your Droplet server IP)*
 ```
-version: '3.8'
-services:
-wireguard:
-    container_name: wireguard
-    image: linuxserver/wireguard
-    environment:
-    - PUID=1000
-    - PGID=1000
-    - TZ=Asia/Hong_Kong
-    - SERVERURL=1.2.3.4
-    - SERVERPORT=51820
-    - PEERS=pc1,pc2,phone1
-    - PEERDNS=auto
-    - INTERNAL_SUBNET=10.0.0.0
-    ports:
-    - 51820:51820/udp
-    volumes:
-    - type: bind
-        source: ./config/
-        target: /config/
-    - type: bind
-        source: /lib/modules
-        target: /lib/modules
-    restart: always
-    cap_add:
-    - NET_ADMIN
-    - SYS_MODULE
-    sysctls:
-    - net.ipv4.conf.all.src_valid_mark=1
+    version: '3.8'
+    services:
+    wireguard:
+        container_name: wireguard
+        image: linuxserver/wireguard
+        environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=America/Chicago
+        - SERVERURL=165.227.79.88
+        - SERVERPORT=51820
+        - PEERS=pc1,pc2,phone1
+        - PEERDNS=auto
+        - INTERNAL_SUBNET=10.0.0.0
+        ports:
+        - 51820:51820/udp
+        volumes:
+        - type: bind
+            source: ./config/
+            target: /config/
+        - type: bind
+            source: /lib/modules
+            target: /lib/modules
+        restart: always
+        cap_add:
+        - NET_ADMIN
+        - SYS_MODULE
+        sysctls:
+        - net.ipv4.conf.all.src_valid_mark=1
 ```
 
 1. **test**
