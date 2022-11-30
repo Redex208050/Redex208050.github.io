@@ -107,18 +107,22 @@
 # docker-compose up -d
 ```
 
-# ***Connect Devices To Wireguard***
+# ***Connect Mobile Device To WireGuard***
 
 1. **Run command to get QR code**
 ```sh
 # docker-compose logs -f wireguard
 ```
 
-2. **Download WireGuard on your IOS device**
+2. **Download the WireGuard app on your phone**
 
-3. **On your phone, select "Add a Tunnel" then "Create from QR code"**
+3. **Open the app and select "Add a Tunnel" then "Create from QR code"**
 
 4. **Scan the "PEER phone1 QR code:" QR code, name the tunnel, and turn the tunnel on**
+
+# ***Connect Laptop to WireGuard***
+
+1. ****
 
 ## **CONGRATULATIONS! You've completed this guide.**
 
