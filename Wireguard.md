@@ -109,7 +109,7 @@
 
 # ***Connect Mobile Device To WireGuard***
 
-1. **Run command to get QR code**
+1. **Run command to get QR code from WireGuard logs**
 ```sh
 # docker-compose logs -f wireguard
 ```
@@ -118,22 +118,47 @@
 
 3. **Open the app and select "Add a Tunnel" then "Create from QR code"**
 
-4. **Scan the "PEER phone1 QR code:" QR code, name the tunnel, and turn the tunnel on**
+4. **Scan the "PEER phone1 QR code:" QR code and name the tunnel**
+
+5. **Activate the tunnel by pressing the sliding button**
 
 # ***Connect Windows Laptop to WireGuard***
 
-1. **Download WireGuard on your Windows laptop by clicking [here](https://download.wireguard.com/windows-client/wireguard-installer.exe)**
+1. **Download then run the WireGuard app on your Windows laptop by clicking [here](https://download.wireguard.com/windows-client/wireguard-installer.exe)**
 
+2. **Exit out of WireGuard logs (Press ctrl+c)**
+
+3. **Open the config for peer_pc1** 
+```sh
+# nano config/peer_pc1/peer_pc1.conf
+```
+
+4. **Create the file peer_pc1.conf anywhere on your laptop and copy the contents of the file from the Droplet into it**
+
+5. **Add a tunnel in the WireGuard app on your laptop and select peer_pc1.conf**
+
+6. **Activate the tunnel**
 
 ## **CONGRATULATIONS! You've completed this guide.**
 
-# **Can't wait for Fiber Optic Friday! AKA photos you requested**
+## **Can't wait for Fiber Optic Friday!**
 
-## **Original IP**
-![Original IP PNG](docs/assets/Original.PNG)
+# **The Screenshots You Requested**
 
-## **IP Using WireGuard**
-![IP Using WireGuard PNG](docs/assets/VPN.PNG)
+# **Original Phone IP**
+![Original Phone IP PNG](docs/assets/Original.PNG)
 
-## **Photo Evidence That The Tunnel Is Active**
-![Photo Evidence That The Tunnel Is Active](docs/assets/Evidence.PNG)
+# **Phone IP Using WireGuard**
+![Phone IP Using WireGuard PNG](docs/assets/VPN.PNG)
+
+# **Photo Evidence That The Tunnel Is Active On Phone**
+![Photo Evidence That The Tunnel Is Active On Phone](docs/assets/Evidence.PNG)
+
+# **Original Laptop IP**
+![Original Laptop IP PNG](docs/assets/LOriginal.png)
+
+# **Laptop IP Using WireGuard**
+![Laptop IP Using WireGuard PNG](docs/assets/LVPN.png)
+
+# **Photo Evidence That The Tunnel Is Active On Phone**
+![Photo Evidence That The Tunnel Is Active On Laptop](docs/assets/LEvidence.png)
