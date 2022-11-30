@@ -116,8 +116,8 @@
 
 2. **Download WireGuard on your IOS device**
 
-3. **Select "Add a Tunnel" then "Create from QR code"**
+3. **On your phone, select "Add a Tunnel" then "Create from QR code"**
 
-4. **Scan QR code, name the tunnel, and turn the tunnel on**
+4. **Scan the "PEER phone1 QR code:" QR code, name the tunnel, and turn the tunnel on**
 
 # **CONGRATULATIONS! You've completed this guide.**
