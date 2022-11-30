@@ -120,9 +120,10 @@
 
 4. **Scan the "PEER phone1 QR code:" QR code, name the tunnel, and turn the tunnel on**
 
-# ***Connect Laptop to WireGuard***
+# ***Connect Windows Laptop to WireGuard***
 
-1. ****
+1. **Download WireGuard on your Windows laptop by clicking [here](https://download.wireguard.com/windows-client/wireguard-installer.exe)**
+
 
 ## **CONGRATULATIONS! You've completed this guide.**
 
