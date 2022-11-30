@@ -120,10 +120,15 @@
 
 4. **Scan the "PEER phone1 QR code:" QR code, name the tunnel, and turn the tunnel on**
 
-# **CONGRATULATIONS! You've completed this guide.**
+## **CONGRATULATIONS! You've completed this guide.**
+
+# **Can't wait for Fiber Optic Friday! AKA photos you requested**
 
 1. **Original IP**
+![Original IP PNG](docs/assets/Original.PNG)
 
 2. **IP Using WireGuard**
+![IP Using WireGuard PNG](docs/assets/VPN.PNG)
 
 3. **Photo Evidence That The Tunnel Is Active**
+![Photo Evidence That The Tunnel Is Active](docs/assets/Evidence.PNG)
