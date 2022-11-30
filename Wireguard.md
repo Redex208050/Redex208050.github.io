@@ -160,5 +160,5 @@
 # **Laptop IP Using WireGuard**
 ![Laptop IP Using WireGuard PNG](docs/assets/LVPN.png)
 
-# **Photo Evidence That The Tunnel Is Active On Phone**
+# **Photo Evidence That The Tunnel Is Active On Laptop**
 ![Photo Evidence That The Tunnel Is Active On Laptop](docs/assets/LEvidence.png)
