@@ -71,7 +71,7 @@
     version: '3.8'\
     services:\
     &ensp;&ensp;wireguard:\
-    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;container_name: wireguard\
+    &ensp;&ensp;&ensp;&ensp;container_name: wireguard\
     &ensp;&ensp;&ensp;&ensp;image: linuxserver/wireguard\
     &ensp;&ensp;&ensp;&ensp;environment:\
     &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- PUID=1000\
@@ -86,20 +86,21 @@
     &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- 51820:51820/udp\
     &ensp;&ensp;&ensp;&ensp;volumes:\
     &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- type: bind\
-    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;source: ./config/\
-    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;target: /config/\
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;source: ./config/\
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;target: /config/\
     &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- type: bind\
-    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;source: /lib/modules\
-    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;target: /lib/modules\
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;source: /lib/modules\
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;target: /lib/modules\
     &ensp;&ensp;&ensp;&ensp;restart: always\
     &ensp;&ensp;&ensp;&ensp;cap_add:\
     &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- NET_ADMIN\
     &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- SYS_MODULE\
     &ensp;&ensp;&ensp;&ensp;sysctls:\
-    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- net.ipv4.conf.all.src_valid_mark=1\
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- net.ipv4.conf.all.src_valid_mark=1
 
 
 1. **Enter the Wireguard directory and start Wireguard**
+
 ```sh
 # cd wireguard
 
