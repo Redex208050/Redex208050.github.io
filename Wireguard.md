@@ -1,5 +1,7 @@
 # ***How To Set Up Wireguard Using Docker***
 
+## ****Create a Droplet****
+
 1. **Create a DigitalOcean account or login with an existing account**
 
 2. **When on the welcome screen, click the DigitalOcean logo to go to your dashboard**
@@ -16,9 +18,11 @@
 ***Optional:*** 
 - *Change hostname to "Wireguard-Lab"*
 
-5. **Launch the console for your new Droplet**
+## ***Download Docker***
 
-6. **Download Docker & Docker Compose**
+1. **Launch the console for your new Droplet**
+
+1. **Download Docker & Docker Compose**
 - *Install required tools*
 ```sh
 # sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
@@ -50,3 +54,47 @@
 ```sh
 # sudo chmod +x /usr/local/bin/docker-compose
 ```
+
+## ***Setup Wireguard***
+
+1. **Make Wireguard directories**
+```sh
+# mkdir -p wireguard/config/
+```
+2. **Create .yml file for docker compose and add the following content**
+- *Command*
+```sh
+# nano wireguard/docker-compose.yml
+```
+- *Content*
+    version: '3.8'
+    services:
+    wireguard:
+        container_name: wireguard
+        image: linuxserver/wireguard
+        environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=Asia/Hong_Kong
+        - SERVERURL=1.2.3.4
+        - SERVERPORT=51820
+        - PEERS=pc1,pc2,phone1
+        - PEERDNS=auto
+        - INTERNAL_SUBNET=10.0.0.0
+        ports:
+        - 51820:51820/udp
+        volumes:
+        - type: bind
+            source: ./config/
+            target: /config/
+        - type: bind
+            source: /lib/modules
+            target: /lib/modules
+        restart: always
+        cap_add:
+        - NET_ADMIN
+        - SYS_MODULE
+        sysctls:
+        - net.ipv4.conf.all.src_valid_mark=1
+
+1. **test**
