@@ -7,13 +7,15 @@
 3. **From the dashboard, select your project and select "Get started with a Droplet"**
 
 4. **Configure Droplet:**
+    - *Change the version of Ubuntu to "20.04 (LTS) x64"*
+    - *Change the CPU option to "Regular with SSD"*
+    - *Choose "New York" as the datacenter region used*
+    - *Create password (used Version2000SysAdminBot)*
+    - ***Create Droplet or refer to Optional configuration***
 
-- Change the version of Ubuntu to "20.04 (LTS) x64" and 
-- Change the CPU option to "Regular with SSD"
-- Choose "New York" as the datacenter region used
-- Create password (used Version2000SysAdminBot)
+    ***Optional:*** 
+    - *Change hostname to "Wireguard-Lab"*
 
-***Optional:*** 
-- Change hostname to "Wireguard-Lab"
+5. **Launch the console for your new Droplet**
 
-5. 
+6. **Download Docker & Docker Compose**
