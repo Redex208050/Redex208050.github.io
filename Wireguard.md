@@ -99,7 +99,7 @@
     &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- net.ipv4.conf.all.src_valid_mark=1
 
 
-3. **Enter the Wireguard directory and start Wireguard**
+3. **Enter the Wireguard directory and build Wireguard**
 
 ```sh
 # cd wireguard
