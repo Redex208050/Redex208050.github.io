@@ -1,6 +1,6 @@
-# ***How To Set Up Wireguard Using Docker***
+## ***How To Set Up Wireguard Using Docker***
 
-## ***Create a Droplet***
+# ***Create a Droplet***
 
 1. **Create a DigitalOcean account or login with an existing account**
 
@@ -18,7 +18,7 @@
 ***Optional:*** 
 - *Change hostname to "Wireguard-Lab"*
 
-## ***Download Docker***
+# ***Download Docker***
 
 1. **Launch the console for your new Droplet**
 
@@ -55,7 +55,7 @@
 # sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-## ***Setup Wireguard***
+# ***Setup Wireguard***
 
 1. **Make Wireguard directories**
 ```sh
