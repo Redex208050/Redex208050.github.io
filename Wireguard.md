@@ -99,4 +99,13 @@ services:
       - net.ipv4.conf.all.src_valid_mark=1"
 ```
 
-1. **test**
+1. **Enter the Wireguard directory and start Wireguard**
+```sh
+# cd wireguard
+
+# docker-compose up -d
+```
+
+# ***Connect Devices To Wireguard***
+
+1. **Connect phone to Wireguard**
