@@ -3,3 +3,6 @@ plugins:
 - jekyll-remote-theme
 title: Brayden's homepage
 description: Guides
+navigation:
+  - name: Guides
+    url: https://redex208050.github.io/
